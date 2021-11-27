@@ -1,0 +1,13 @@
+version: '3.5'
+services:
+
+  LinkedIn:
+    build: .
+    environment:
+      - DISPLAY=${DISPLAY}
+    image: LinkedIn
+    restart: "always"
+    volumes:
+      - ./config.yml:/code/config.yml
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    network_mode: host
